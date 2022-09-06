@@ -4,9 +4,9 @@ The code for UNet is adapted from [this repo](https://github.com/milesial/Pytorc
 
 ## Run on local machine
 
-Install the requirement by 
+Activate your virtual environment. Install the requirements by 
 
-```py
+```terminal
 pip install -r requirements.txt
 ```
 
@@ -14,16 +14,24 @@ pip install -r requirements.txt
 
 Check if there's one labeled mask:
   - Yes: Increase training data by rotation. Then, proceed to [Step 2](#2-training).
+  ```terminal
+  cd 1_Data
+  python data_augmentation.py
+  cd ..
+  ```
   - No: Annotate using [labelme](https://github.com/wkentaro/labelme/tree/main/examples/semantic_segmentation).
 
 ### 2. Training
 
 Model is defined in the training pipeline. The only parameter that changes is load, which is the weight located in checkpoint folder. 
 
-Download link for [default weight](https://drive.google.com/file/d/1UF9rJbvyg_ClmstrehqCaJ8a3e4mz879/view?usp=sharing) and [latest weight](https://drive.google.com/file/d/1O1Wrvex2v8rK4us8k9OiWB72b-yuC71Q/view?usp=sharing).
+Download link for [default weight](https://drive.google.com/file/d/1UF9rJbvyg_ClmstrehqCaJ8a3e4mz879/view?usp=sharing) and [latest weight](https://drive.google.com/file/d/1O1Wrvex2v8rK4us8k9OiWB72b-yuC71Q/view?usp=sharing). Put the downloaded weight in the checkpoint folder.
 
-```py
+```terminal
+cd 2_UNet
+
 # default
+
 python train.py --epochs 200 --batch-size 2 --learning-rate 1e-5 --load checkpoint/saved/unet_carvana_scale1.0_epoch2.pth --scale 1
 
 # latest
