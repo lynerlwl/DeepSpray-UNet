@@ -68,3 +68,8 @@ To-Be-Updated...
 ## Run on Google Colab
 
 For Training and Testing only. Data Preparation should be done locally. Upload this folder to your Google Drive, then open "main.ipynb" from Google Colab.
+
+## Note
+
+1. Inference can be run using GPU with 4GB vram (GTX 1650).
+2. In case of CUDA running out of memory during inference, try to clear NVIDIA cache.
