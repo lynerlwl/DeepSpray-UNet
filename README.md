@@ -61,9 +61,17 @@ Even you only want to predict a single image, also put it in a folder.
 python predict.py --model checkpoint/saved/run10=5.83e-7.pth --scale 1 --input 1_Data/test/*.png
 ```
 
-### 4. Deployment & Evaluation
+### 4. Visualize
 
-To-Be-Updated...
+To convert binary mask to RGB images you got in 3.
+
+```py
+python mask_to_rgb.py --path <folder_contain_binary_mask>
+```
+
+### 5. Object Count
+
+TO-BE-UPDATE
 
 ## Run on Google Colab
 
