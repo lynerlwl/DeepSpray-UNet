@@ -16,15 +16,15 @@ if __name__ == '__main__':
 
     cmap = matplotlib.colors.LinearSegmentedColormap.from_list("", ['white', 'red', 'green', 'yellow', 'blue'])
 
-    filenames = [name for name in os.listdir(args.input[0]) if not name.startswith('.')] 
+    filenames = [name for name in os.listdir(args.path[0]) if not name.startswith('.')] 
 
-    if os.path.exists(f"{args.input[0]}-color") == False:
-        os.makedirs(f"{args.input[0]}-color")
+    if os.path.exists(f"{args.path[0]}-color") == False:
+        os.makedirs(f"{args.path[0]}-color")
 
     for file in filenames:
-        load_name = f"{args.input[0]}/{file}"
+        load_name = f"{args.path[0]}/{file}"
         img = Image.open(load_name)
-        save_name = f"{args.input[0]}-color/{file}"
+        save_name = f"{args.path[0]}-color/{file}"
         
         plt.imshow(np.array(img), cmap=cmap)
         plt.axis('off')
