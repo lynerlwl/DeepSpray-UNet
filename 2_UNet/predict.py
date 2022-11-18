@@ -7,7 +7,7 @@ import torch
 import torch.nn.functional as F
 from PIL import Image
 from torchvision import transforms
-
+import glob
 from utils.data_loading import BasicDataset
 from unet import UNet
 from utils.utils import plot_img_and_mask
@@ -77,7 +77,9 @@ if __name__ == '__main__':
 
     logging.info('Model loaded!')
 
-    for i, filename in enumerate(args.input):
+    file_list = [f"{args.input[0]}/{name}" for name in os.listdir(args.input[0]) if not name.startswith('.')] 
+
+    for i, filename in enumerate(file_list):
         logging.info(f'\nPredicting image {filename} ...')
         img = Image.open(filename).convert('RGB')
         img_name = filename.split('/')[-1]
