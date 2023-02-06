@@ -63,7 +63,7 @@ python predict.py --model checkpoint/saved/run10=5.83e-7.pth --scale 1 --input 1
 
 ### 4. Visualize
 
-To convert binary mask to RGB images you got in 3.
+To convert binary mask to RGB images you got in step 3.
 
 ```py
 python mask_to_rgb.py --path <folder_contain_binary_mask>
