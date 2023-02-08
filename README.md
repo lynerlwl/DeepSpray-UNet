@@ -71,7 +71,29 @@ python mask_to_rgb.py --path <folder_contain_binary_mask>
 
 ### 5. Object Count
 
-TO-BE-UPDATE
+Isolate each objects from a mask (generated in [step 3](#3-testing)), one mask should have 4 objects.
+
+```py
+python isolate_object_from_mask.py --dir <folder_contain_binary_mask>
+```
+
+Count the objects from image generated from step above, the count will be written on the image generated from [Step 4](#4-visualize).
+
+```py
+python count_objects.py --dir <folder_with_isolated_mask> --out <folder_than_have_rgb mask>
+```
+
+Combine the images to a video.
+
+```py
+python image_to_video.py --dir <folder_contain_image>
+```
+
+Combine two videos, see [example](https://youtu.be/W9i81tLX5r8).
+
+```py
+python combine_videos.py --vid1 <name_of_video1> --vid2 < <name_of_video2> --out <name_of_combined_video>
+```
 
 ## Run on Google Colab
 
