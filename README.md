@@ -55,10 +55,10 @@ No improvement for the next 200 epochs, best was 1.11e-6
 
 ### 3. Testing
 
-Move the testing images into the same directory. Even you only want to predict a single image, also put it in a folder.
+Even you only want to predict a single image, also put it in a folder.
 
 ```py
-python predict.py --model checkpoint/saved/run10=5.83e-7.pth --scale 1 --input 1_Data/test
+python predict.py --model checkpoint/saved/run10=5.83e-7.pth --scale 1 --input ../1_Data/test
 ```
 
 ### 4. Visualize
